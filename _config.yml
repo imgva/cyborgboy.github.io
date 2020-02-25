@@ -52,4 +52,4 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-theme: thelehhman/plainwhite-jekyll
+theme: jekyll-theme-midnight
