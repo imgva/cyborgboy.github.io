@@ -1,1 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-25T15:27:51+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Cyborgboy</title><subtitle>Budding Security Enthusiast and Programmer .</subtitle><entry><title type="html">My First Pentesting Journey</title><link href="http://localhost:4000/web/security/pentesting/My-First-Pentesting-Journey/" rel="alternate" type="text/html" title="My First Pentesting Journey" /><published>2018-06-21T00:00:00+05:30</published><updated>2018-06-21T00:00:00+05:30</updated><id>http://localhost:4000/web/security/pentesting/My-First-Pentesting-Journey</id><content type="html" xml:base="http://localhost:4000/web/security/pentesting/My-First-Pentesting-Journey/">&lt;p&gt;It was my holiday and i am working on my college project and suddenly my friend called(phone) and said me to test a website.  which belongs to his Friend, where the  site is  fresh and not tested by anyone and i was Very much excited&lt;/p&gt;</content><author><name></name></author><summary type="html">It was my holiday and i am working on my college project and suddenly my friend called(phone) and said me to test a website. which belongs to his Friend, where the site is fresh and not tested by anyone and i was Very much excited</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/Blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Blog/" rel="alternate" type="text/html" /><updated>2020-02-26T23:11:34+05:30</updated><id>http://localhost:4000/Blog/feed.xml</id><title type="html">Cyborgboy</title><subtitle>Budding Security Enthusiast and Programmer .</subtitle><entry><title type="html">My First Pentesting Journey</title><link href="http://localhost:4000/Blog/web/security/pentesting/My-First-Pentesting-Journey/" rel="alternate" type="text/html" title="My First Pentesting Journey" /><published>2018-06-21T00:00:00+05:30</published><updated>2018-06-21T00:00:00+05:30</updated><id>http://localhost:4000/Blog/web/security/pentesting/My-First-Pentesting-Journey</id><content type="html" xml:base="http://localhost:4000/Blog/web/security/pentesting/My-First-Pentesting-Journey/">&lt;h2 id=&quot;introduction-&quot;&gt;Introduction :&lt;/h2&gt;
+&lt;p&gt;I’ve Started My infosec Journey in year of 2017 as a Partime Hobby , at first I got into Bug Bounty and Learnt about Application Security , So testing  Applications was merged as my daily Todo Fun which is filled with joy and excitment.&lt;/p&gt;
+
+&lt;p&gt;Internet is filled with tons of application each Application resembles a brain who designed them and testing every application is like communicating with those Intelligent toughts and learning from them to build Understand the flow of Application .&lt;/p&gt;
+
+&lt;p&gt;MY FIRST PENTEST :&lt;/p&gt;
+
+&lt;p&gt;The First Application that I’ve Got to test is which Belongs to  my Friend , It was a Holiday I was Working on my College Project and on other hand I started testing the application as Normally I mapped the application to understand the flow of the application . while following the flow gradullay i got to knew the list of functionalities.&lt;/p&gt;
+
+&lt;p&gt;This is How i found my first XSS :&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note : Wappalyzer always comes handy to Identify the Old version Libraries are already tagged with some cve's.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There was a Functionality in Web Application where  users can Design an Instant Application with Project Name . so
+I Passed XSS Payload in Input Fields of project name as the Result the Application assigned with the Porject Name which Triggered XSS (STORED XSS) 
+          &lt;center&gt; &lt;img src=&quot;/Blog/assets/app.jpg&quot; /&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;OBSERVATION :&lt;/p&gt;
+
+&lt;p&gt;so here the main things  that i observed is  the project application  name ,  which is passed  by user is reflecting back
+and soon i have seen that an I Frame is created after building an application so i tried following payload&lt;/p&gt;
+&lt;center&gt; &lt;div id=&quot;content&quot;&gt; &amp;lt;iframe src=javascript:alert(document.domain)&amp;gt; &lt;/div&gt;&lt;/center&gt;
+&lt;p&gt;&lt;img src=&quot;/Blog/assets/alert.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just wait i havent finished yet there is another finding that i want to share&lt;/p&gt;
+&lt;h2 id=&quot;here-how-i-found-open-git-direcoty-leaking-sensitive-files&quot;&gt;Here How I Found Open Git Direcoty leaking Sensitive Files&lt;/h2&gt;
+
+&lt;p&gt;Here I detailed about the  journey from  amazon open bucket to hidden git folder as it looks like magic my day started with a password reset email it was morning and i have forgotten the password for the my account . so i requested for a password reset email . I landed up with this one&lt;/p&gt;
+
+&lt;center&gt;
+&lt;img src=&quot;/Blog/assets/email.jpg&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;This was the Password Reset Link in email which has broken HTML Content with Password Reset Link . unexpectedly The Broken HTML Image Leaking out the Amazon S3 bucket storage Location&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/Blog/assets/shocking.gif&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note: It is better to check the image Location to find where it is loading from&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Quickly without thinking i fired up my terminal &amp;gt; aws client and pushed an xss file to bucket but it rejected with permission denied :( but after seeing all list of folder there i found the path to git folder&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;https://img.buzzfeed.com/buzzfeed-static/static/2014-06/4/11/enhanced/webdr03/anigif_enhanced-13120-1401894225-26.gif&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;soon i have started git dumper and cloned all there git folder  after that i have checked for some files and found some of important directories&lt;/p&gt;
+
+&lt;center&gt;THANK'S FOR READING&lt;/center&gt;</content><author><name></name></author><summary type="html">Introduction : I’ve Started My infosec Journey in year of 2017 as a Partime Hobby , at first I got into Bug Bounty and Learnt about Application Security , So testing Applications was merged as my daily Todo Fun which is filled with joy and excitment.</summary></entry></feed>
