@@ -17,7 +17,7 @@ title: Cyborgboy
 email: cyborgboy@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Budding Security Enthusiast and Programmer .
-baseurl: "/cyborgboy.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "/cyborgboy.github.io" # the subpath of your site, e.g. /blog
 url: "https://shivasaichalla.me" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:categories/:title/
 plainwhite:
